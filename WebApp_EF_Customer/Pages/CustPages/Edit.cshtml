@@ -1,0 +1,36 @@
+﻿@page
+@model WebApp_EF_Customer.Pages.EditModel
+@{
+}
+
+<form method="post">
+    <!-- This hidden field is must to EDIT existing record -->
+    <input hidden asp-for="Cust.Id" />
+    <div class="border p-3 mt-4">
+        <div>
+            <label asp-for="Cust.Name">Full Name</label>
+            <input asp-for="Cust.Name"/>
+            <span class="text-danger" asp-validation-for="Cust.Name"></span>
+        </div>
+        <div>
+            <label>Contact Number</label>
+            <!-- <input type="text" name="Cust.Contact"/> -->
+             <input asp-for="Cust.Contact"/>
+            <span class="text-danger" asp-validation-for="Cust.Contact"></span>
+        </div>
+        <div>
+            <label>Full Adress</label>
+            <!-- <input type="text" name="Cust.Address"/> -->
+             <input asp-for="Cust.Address"/>
+            <span class="text-danger" asp-validation-for="Cust.Address"></span>
+        </div>
+    <button type="submit" class="btn btn-primary">Update Customer</button>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name = "_ValidationScriptsPartial"/>
+    }
+}

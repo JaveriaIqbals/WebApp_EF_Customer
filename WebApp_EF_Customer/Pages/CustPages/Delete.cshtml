@@ -1,0 +1,27 @@
+﻿@page
+@model WebApp_EF_Customer.Pages.CustPages.DeleteModel
+@{
+}
+
+<form method="post">
+    <input hidden asp-for="Cust.Id" />
+    <div class="border p-3 mt-4">
+        <div>
+            <label asp-for="Cust.Name">Full Name</label>
+            <input asp-for="Cust.Name" disabled/>
+           
+        </div>
+        <div>
+            <label>Contact Number</label>
+            <!-- <input type="text" name="Cust.Contact"/> -->
+             <input asp-for="Cust.Contact" disabled/>
+           </div>
+        <div>
+            <label>Full Adress</label>
+            <!-- <input type="text" name="Cust.Address"/> -->
+             <input asp-for="Cust.Address" disabled/>
+            
+        </div>
+    <button type="submit" class="btn btn-primary">Delete Customer</button>
+    </div>
+</form>
