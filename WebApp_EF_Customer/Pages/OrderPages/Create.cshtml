@@ -1,0 +1,25 @@
+﻿@page
+@model WebApp_EF_Customer.Pages.OrderPages.CreateModel
+@{
+}
+
+<form method="post">
+    <div>
+    <label asp-for="order.TrackingNum"> Order Tracking Number </label>
+    <input asp-for="@Model.order.TrackingNum"/>
+    <span asp-validation-for="@Model.order.TrackingNum" class="text-danger"></span>
+    </div>
+    <div>
+    <label asp-for="order.OrderTotal"> Order Total </label>
+    <input asp-for="@Model.order.OrderTotal"/>
+    <span asp-validation-for="@Model.order.OrderTotal" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add New Order</button>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

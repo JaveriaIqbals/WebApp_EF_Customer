@@ -1,0 +1,30 @@
+﻿@page
+@model WebApp_EF_Customer.Pages.OrderPages.ShowALlModel
+@{
+}
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Order Number
+        </th>
+        <th>
+            Tracking Number
+        </th>
+        <th>
+            Order Total
+        </th>
+    </tr>
+    @foreach(var o in Model.orders)
+    {
+    <tr>
+        <td width="20%">@o.Id</td>
+        <td width="20%">@o.TrackingNum</td>
+        <td width="20%">@o.OrderTotal</td>
+        <td>
+            <a asp-page="edit" class="btn btn-primary">Edit Order</a>
+            <a asp-page="delete" class="btn btn-danger">Delete Order</a>
+        </td>
+    </tr>
+    }
+</table>
